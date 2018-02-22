@@ -20,7 +20,7 @@ body , html {
 
 .showcase{
 	height: 100vh;
-	background: url(../image/mars1.jpg);
+	background: url(../image/Mars1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
