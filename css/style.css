@@ -4,7 +4,7 @@
 }
 
 body , html {
-	background: url(../image/gradient.jpg);
+	background: url(../image/background1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -25,7 +25,7 @@ body , html {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	
+	filter: drop-shadow(3px 3px 10px #91e8fb);
 }
 
 /* Header */
@@ -81,21 +81,22 @@ h1{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-gap: 20px;
-	margin: 50px 20px;
+	margin: 150px 20px 0 20px;
+	grid-template-areas: "mars rocket earth";
 }
 
 .card{
 	border-radius: 10px;
-	box-shadow: 3px 3px 10px #91e8fb;
-	box-shadow:inset 0 0 20px #4C90AE,
-	0 8px 6px -6px #91e8fb; 
+	filter: drop-shadow(3px 3px 10px #91e8fb);
 	min-width: 300px;
 	display: grid;
 	justify-items: center;
 }
 
 .card p{
-	margin: 30px 20px;
+	margin-top: 15%;
+	margin-right: 10%;
+	margin-left: 10%;
 	color: #f4f4f4;
 	font-size: 1.2em;
 }
@@ -107,6 +108,7 @@ h1{
 	opacity: 0.9;
 	height:80vh;
 	width: 30vw;
+	grid-area: mars;
 }
 
 .earth{
@@ -116,44 +118,29 @@ h1{
 	opacity: 0.9;
 	height:80vh;
 	width: 30vw;
+	grid-area: earth;
 }
 
-.rocket img{
-	width: 100%;
-	position: relative;
-	animation-name: RocketTakesOFF;
-	animation-duration: 0.0268s;
-	animation-timing-function:linear;
-	animation-iteration-count: infinite;
-}
+@media(max-width: 700px){
+	.details{
+			display: grid;
+			grid-auto-rows: minmax(100px, auto);
+			grid-template-columns: 1fr;
+			grid-template-areas: 
+				"mars"
+				"earth"
+				"rocket";
+	}
 
-/* Standard syntax */
-@keyframes RocketTakesOFF {
-    0%   { left:0px; top:0px;}
-    10%  { left:1px; top:0px;}
-    20%  { left:2px; top:0px;}
-    30%  { left:3px; top:0px;}
-		40%  { left:4px; top:0px;}
-		50%  { left:0px; top:0px;}
-		60%  { left:0px; top:0px;}
-		70%  { left:3px; top:0px;}
-		80%  { left:4px; top:1px;}
-		90%  { left:2px; top:0px;}
-		100% { left:1px; top:0px;}
-}
+	.mars{
+		height: 80vh;
+		width: auto;
+	}
 
-#countdown{
-	text-align: center;
-	font-size: 1.5em;
-	text-transform: uppercase;
-	color: #f4f4f4;
-}
-
-#countdown1{
-	text-align: center;
-	font-size: 1.5em;
-	text-transform: uppercase;
-	color: #f4f4f4;
+	.earth{
+		height: 80vh;
+		width: auto;
+	}
 }
 
 /* Form */
@@ -182,60 +169,226 @@ label{
 }
 
 
+/* Rocket */
 
-.div1 {
-	max-width: 50px;
-	max-height: 50px;
-	border-radius:50%;
-	background-color: #f3f3f3;
+.rocket{
 	position: relative;
-	animation-name: example;
-	animation-duration: 0.5s;
+	grid-area: rocket;
+}
+
+.rocket img{
+	width: 100%;
+	position: relative;
+	margin-top: 30%;
+	animation-name: RocketTakesOFF;
+	animation-duration: 0.3s;
+	animation-timing-function:linear;
 	animation-iteration-count: infinite;
 }
 
-.div2 {
-	width: 20px;
-	height: 20px;
-	border-radius:50%;
-	background-color: #f3f3f3;
-	position: relative;
-	animation-name: example2;
-	animation-duration: 0.5s;
-	animation-iteration-count: infinite;
+@keyframes RocketTakesOFF {
+	0%   { left:0px; top:0px;}
+	10%  { left:0.5px; top:0px;}
+	20%  { left:1px; top:0px;}
+	30%  { left:1.5px; top:0px;}
+	40%  { left:1px; top:0px;}
+	50%  { left:0px; top:0px;}
+	60%  { left:0px; top:0px;}
+	70%  { left:1px; top:0px;}
+	80%  { left:1.5px; top:0px;}
+	90%  { left:0.5px; top:0px;}
+	100% { left:1px; top:0px;}
+}
+
+#countdown{
+	text-align: center;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: #f4f4f4;
+}
+
+#countdown1{
+	text-align: center;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: #f4f4f4;
 }
 
 
-/* Standard syntax */
-@keyframes example {
-	0%   {background-color:#000; opacity:0.1; left:200px; top:0px;}
-	10%  {background-color:#000; opacity:0.2; left:150px; top:20px;}
-	20%  {background-color:#000; opacity:0.4; left:130px; top:40px;}
-	30%  {background-color:#000; opacity:0.6; left:100px; top:60px;}
-	40% {background-color:#000; opacity:0.8; left:70px; top:65px;}
-	50% {background-color:#000; opacity:0.8; left:50px; top:70px;}
-	60% {background-color:#000; opacity:0.8; left:30px; top:60px;}
-	70% {background-color:#f9f9f9; opacity:0.8; left:20px; top:50px;}
-	80% {background-color:#000; opacity:0.8; left:19px; top:20px;}
-	90% {background-color:#f4f4f4; opacity:0.8; left:15px; top:10px;}
-	100% {background-color:#f1f1f1; opacity:0.8; left:-10px; top:-10px;}
-}
-
-@keyframes example2 {
-	0%   {background-color:#000; opacity:0.1; right:200px; top:0px;}
-	10%  {background-color:#000; opacity:0.2; right:350px; top:20px;}
-	20%  {background-color:#000; opacity:0.4; right:370px; top:40px;}
-	30%  {background-color:#000; opacity:0.6; right:400px; top:60px;}
-	40% {background-color:#000; opacity:0.8; left:430px; top:65px;}
-	50% {background-color:#000; opacity:0.8; left:450px; top:70px;}
-	60% {background-color:#000; opacity:0.8; left:430px; top:60px;}
-	70% {background-color:#f9f9f9; opacity:0.8; left:400px; top:50px;}
-	80% {background-color:#000; opacity:0.8; left:370px; top:20px;}
-	90% {background-color:#f4f4f4; opacity:0.8; left:350px; top:10px;}
-	100% {background-color:#f1f1f1; opacity:0.8; left:200px; top:-10px;}
-}
+/* Smoke animation */
 
 .smoke{
-	display:grid;
-	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	position: absolute;
+	top: 102%;
+	right: 57.5%;
+	transform:translateX(-50%);
+	margin: 0;
+	padding: 0;
 }
+
+.smoke li{
+	position:absolute;
+	list-style-type: none;
+	width: 15px;
+	height: 15px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+/* Defining animations */
+
+li:nth-child(1){
+	animation: Smoke1 0.15s linear infinite;
+}
+
+li:nth-child(2){
+	animation: Smoke2 0.15s linear infinite;
+}
+
+li:nth-child(3){
+	animation: Smoke3 0.15s linear infinite;
+}
+
+li:nth-child(4){
+	animation: Smoke4 0.15s linear infinite;
+}
+
+li:nth-child(5){
+	animation: Smoke5 0.15s linear infinite;
+}
+
+li:nth-child(6){
+	animation: Smoke6 0.15s linear infinite;
+}
+
+li:nth-child(7){
+	animation: Smoke7 0.15s linear infinite;
+}
+
+/* Animations */
+
+@keyframes Smoke1{
+	0%{ transform: translate(-50px,0) scale(1.5);
+		opacity:1;
+		filter: blur(5px);
+	}
+	50%{ transform: translate(-50px,0) scale(2);
+		opacity:1;
+		filter: blur(5px);
+	}
+	100%{transform:translate(-90px, 300px) scale(3);
+	opacity:0.9;
+	filter:blur(10px);
+	}
+}
+
+@keyframes Smoke2{
+	0%{ transform: translate(-30px,0) scale(1.5);
+		opacity:1;
+		filter: blur(5px);
+	}
+	50%{ transform: translate(-30px,0) scale(2);
+		opacity:1;
+		filter: blur(5px);
+	}
+	100%{transform:translate(-50px, 300px) scale(3);
+	opacity:0.9;
+	filter:blur(10px);
+	}
+}
+
+@keyframes Smoke3{
+	0%{ transform: translate(-20px,0) scale(1.5);
+		opacity:1;
+		filter: blur(5px);
+	}
+	50%{ transform: translate(-20px,0) scale(2);
+		opacity:1;
+		filter: blur(5px);
+	}
+	100%{transform:translate(-20px, 300px) scale(3);
+	opacity:0.9;
+	filter:blur(10px);
+	}
+}
+
+@keyframes Smoke4{
+	0%{ transform: translate(15px,0) scale(3);
+		opacity:1;
+		filter: blur(5px);
+	}
+	50%{ transform: translate(15px,0) scale(5);
+		opacity:1;
+		filter: blur(5px);
+	}
+	100%{transform:translate(20px, 300px) scale(7);
+	opacity:0.9;
+	filter:blur(10px);
+	}
+}
+
+@keyframes Smoke5{
+	0%{ transform: translate(40px,0) scale(1.5);
+		opacity:1;
+		filter: blur(5px);
+	}
+	50%{ transform: translate(40px,0) scale(2);
+		opacity:1;
+		filter: blur(5px);
+	}
+	100%{transform:translate(60px, 300px) scale(3);
+	opacity:0.9;
+	filter:blur(10px);
+	}
+}
+
+@keyframes Smoke6{
+	0%{ transform: translate(65px,0) scale(1.5);
+		opacity:1;
+		filter: blur(5px);
+	}
+	50%{ transform: translate(65px,0) scale(2);
+		opacity:1;
+		filter: blur(5px);
+	}
+	100%{transform:translate(100px, 300px) scale(3);
+	opacity:0.9;
+	filter:blur(10px);
+	}
+}
+
+@keyframes Smoke7{
+	0%{ transform: translate(85px,0) scale(1.5);
+		opacity:1;
+		filter: blur(5px);
+	}
+	50%{ transform: translate(85px,0) scale(2);
+		opacity:1;
+		filter: blur(5px);
+	}
+	100%{transform:translate(150px, 300px) scale(3);
+	opacity:0.9;
+	filter:blur(10px);
+	}
+}
+
+/* Animations End */
+
+/* Social Media */
+
+.social{
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(30px, 50px));
+	grid-gap: 5px;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.social a{
+	text-decoration: none;
+}
+
+.facebook a:hover{color:#3b5998;}
+.twitter a:hover{color:#1dcaff;}
+.linkedin a:hover{color:#0077b5;}
+.youtube a:hover{color:red;}
