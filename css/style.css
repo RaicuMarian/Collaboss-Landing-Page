@@ -100,8 +100,9 @@ h1{
 		grid-area: details;
 		justify-items: start;
 		align-content: center;
-		margin-top: 10vh;
+		margin-top: 15vh;
 		padding-right: 30px;
+		padding-left: 10px;
 		max-height: 20vh;
 	}
 
