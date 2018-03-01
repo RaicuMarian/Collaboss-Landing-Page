@@ -1,3 +1,5 @@
+// countdown
+
 var countDownDate = new Date("May 15, 2018 15:37:25").getTime();
 
 var x = setInterval(function() {
@@ -51,3 +53,20 @@ document.querySelector('.flyRocket').addEventListener('click', animate2);
  function removeClass2() {
      document.getElementById('smokeDiv').classList.remove('rocketUp');
  }
+
+// displaying form
+
+ document.querySelector('#image').addEventListener('animationstart', displayForm);
+
+ function displayForm(){
+    document.getElementById('hidden1').classList.remove('hidden');
+    document.getElementById('count1').style.display = 'none';
+ }
+
+//  Displaying form for Mobile
+
+document.querySelector('#image').addEventListener('animationiteration', displayCard);
+
+function displayCard(){
+    document.getElementById('mars1').classList.remove('hiddenMars');
+}

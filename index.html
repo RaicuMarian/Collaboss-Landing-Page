@@ -26,9 +26,14 @@
 
 	<section>
 		<div class="details">
-			<div class="mars card">
-				<p>Subscribe to our newsletter, so we can announce you when we TAKE OFF and start our journey.</p>
-				<form>
+			<div id="mars1" class="mars card hiddenMars">
+				<div id="count1" class="count">
+					<div id="countdown1"><h2>Ready in:</h2></div>
+					<div id="countdown" class="takeOff"></div>
+				</div>
+				<div id="hidden1" class="hidden">
+					<p>Subscribe to our newsletter, so we can announce you when we TAKE OFF and start our journey.</p>
+					<form>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email address</label>
 							<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -36,6 +41,7 @@
 						</div>
 						<button class="button-1" type="submit" class="btn btn-primary">Join US</button>
 					</form>
+				</div>
 			</div>
 			<div class="rocket-smoke" id="smokeDiv" >
 				<div class="rocket"><img id="image" src="image/falconheavy.png" alt="rocket">
@@ -51,12 +57,18 @@
 					
 				</div>
 			</div>
-			<div class="earth card"><p>Almost 			daily blog about the</br> amazing 		adventure of mankind trying</br> 			reach another planets(MARS first), 		and to save our own.</br> Latest 			news about tech, gadgets,</br> and 		technological breaktroughs.</p>
-				<div id="countdown1"><p>Ready in:</p></div>
-				<div id="countdown" class="takeOff"></div>
+			<div class="earth card"><p>An almost 			daily blog about the</br> amazing 		adventure of mankind trying 		to reach other planets, 		and to save our own.</br> Latest 			news about tech, gadgets,</br> and 		Technological breakthroughs.</p>
+				<p>Realease date:</br><span style="color:orangered;">MAY 20 2018</span> .</p>
+				<!-- <div id="countdown1"><p>Ready in:</p></div>
+				<div id="countdown" class="takeOff"></div> -->
 			</div>
 		</div>	
-		<div class="flyRocket"><p>!!Take-Off!!</p></div>
+		<div class="flyRocket">
+			<div class="mobil">
+				<p style="color: #fff; font-size:1.2em;"> HIT 'subscribe' and follow the Rocket!</p>
+			</div>
+			<button>SUBSCRIBE</button>
+		</div>
 	</section>
 
 		<section class="socialMedia">

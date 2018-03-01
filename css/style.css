@@ -175,7 +175,8 @@ h1{
 	animation-duration: 6s;
 	animation-iteration-count: 1;
 	animation-timing-function: cubic-bezier(1.000, -0.070, 0.415, 1.380);
-	animation-delay: 6s;
+	animation-delay: 1.5s;
+	animation-fill-mode: forwards;
 }
 
 @keyframes up{
@@ -186,33 +187,60 @@ h1{
 @media(max-width: 700px){
 	.details{
 			grid-template-areas: 
-				"earth"
 				"mars"
+				"earth"
 				"rocket";
 			margin-top: 3vh;
 	}
+
 	.mars{
 		height: 80vh;
 		width: auto;
 	}
+
 	.earth{
 		height: 80vh;
 		width: auto;
 	} 
+
 	.rocket-smoke{
 		height: 80vh;
 		width: auto;
 	}
+
+	.hiddenMars{
+		display: none;
+	}
+
+	@keyframes up{
+		0%{transform:translateY(0)}
+		50%{transform:translateY(-1100px)}
+		100%{transform:translateY(-1100px)}
+	}
+}
+
+@media(min-width: 700px){
+	.mobil{display:none;}
 }
 
 /* Form */
 
- input{
-	opacity: 0.7;
-	width: 100;
+.hidden{
+	display:none;
 }
 
- input:focus{
+#hidden1 form{
+	margin: 20px;
+	padding-top: 80px;
+}
+
+#hidden1 input{
+	opacity: 0.7;
+	width: 90%;
+	margin-left: 10px;
+}
+
+#hidden1 input:focus{
 	border: none;
 	opacity: 1;
 }
@@ -228,6 +256,10 @@ label{
 	border:none;
 	border-radius: 10px;
 	padding: 5px 20px;
+}
+
+.button-1:focus{
+	outline: none;
 }
 
 
@@ -247,8 +279,8 @@ label{
 	animation-name: RocketTakesOFF;
 	animation-duration: 0.3s;
 	animation-timing-function:linear;
-	animation-iteration-count: 33;
-	animation-delay: 2s;
+	animation-iteration-count: 30;
+	animation-delay: 0.5s;
 }
 
 @keyframes RocketTakesOFF {
@@ -265,6 +297,10 @@ label{
 	100% { left:5px; top:0px;}
 }
 
+.count{
+	padding-top:30vh;
+}
+
 #countdown{
 	text-align: center;
 	font-size: 0.9;
@@ -273,6 +309,8 @@ label{
 }
 
 #countdown1{
+	display: grid;
+	align-items: flex-end;
 	text-align: center;
 	font-size: 1.5em;
 	font-weight: bolder;
@@ -450,16 +488,24 @@ li:nth-child(7){
 	display: grid;
 	justify-items: center;
 	width: 100%;
+	margin-top: 50px;
 }
 
-.flyRocket p{
+.flyRocket button:focus {
+	outline: none;
+}
+
+.flyRocket button{
 	border: 2px solid #3b5998;
 	background-color: #4C90AE;
 	color: #f4f4f4;
 	border-radius: 10px;
+	margin: 20px;
 	padding: 15px 20px;
 	filter: drop-shadow(3px 3px 10px #91e8fb);
 }
+
+
 
 /* Social Media */
 
